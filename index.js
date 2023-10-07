@@ -21,9 +21,12 @@ $(document).ready(()=>{
             const fileList = $("#fileList");
             fileList.empty();
 
+            const fileContent = atob(data.content); // 解码Base64编码的文件内容
+            console.log(fileContent); // 输出文件内容到控制台
+            
             data.forEach(function(item) {
                 if (item.type === "file") {
-                    console.log(item.name);
+                    console.log(item);
                     const fileName = item.name;
                     const listItem = $("<li></li>").text(fileName);
                     fileList.append(listItem);
