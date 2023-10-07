@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Artisans</title>
+		<style>
+			:root {
+				font-size: 15px;
+				--light-size: 100px;
+				--light-color: #9333ea;
+				--light-highlight-color: #d8b4fe;
+			}
+			body {
+				font-size: 1.5rem;
+				font-family: Helvetica, sans-serif;
+				background-color: #020617;
+				color: #94a3b8;
+			}
+
+			div {
+				padding: 40px;
+			}
+			h1 {
+				display: block;
+				text-decoration: none;
+				color: #9333ea;
+				background-image: radial-gradient(
+					var(--light-highlight-color),
+					var(--light-color),
+					var(--light-color)
+				);
+				background-size: var(--light-size) var(--light-size);
+				background-repeat: no-repeat;
+				background-position-x: calc(
+					var(--offsetX) - calc(var(--light-size) / 2)
+				);
+				background-position-y: calc(
+					var(--offsetY) - calc(var(--light-size) / 2)
+				);
+				background-color: var(--light-color);
+				color: transparent;
+				-webkit-background-clip: text;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			在针对 JavaScript 应用开发者的 许多图表库 中，根据<a href="baidu.com">
+				GitHub </a
+			>关注数 （~60,000）和 npm 下载量 （每周~2,400,000），Chart.js
+			目前是最受欢迎的。 <a href="baidu.com">Chart.js</a> 于 2013 年创建和 发布
+			，但从那时起已经<a href="rom42.cc">走了很长一段路。</a>
+			它是开源的，在非常宽松的 MIT license 下获得许可，并由活跃的社区维护。
+		</div>
+		<h1
+			style="
+				font-size: 48px;
+				margin: auto;
+				font-family: 'Courier New', Courier, monospace;
+			"
+		>
+			原神，启动！
+		</h1>
+		<script>
+			document.querySelectorAll("h1").forEach((a) => {
+				a.addEventListener("mousemove", (e) => {
+					const linkElement = e.target;
+					linkElement.style.setProperty("--offsetX", `${e.offsetX}px`);
+					linkElement.style.setProperty("--offsetY", `${e.offsetY}px`);
+				});
+			});
+		</script>
+	</body>
+</html>

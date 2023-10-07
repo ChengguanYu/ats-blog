@@ -1,0 +1,144 @@
+@font-face {
+	font-family: SiYuanSong;
+	src: url("./font/SourceHanSerifCN-Bold.otf");
+}
+* {
+	font-family: SiYuanSong;
+	margin: 0 auto;
+
+	--ats-color-primary-text-deep: rgb(55, 55, 55);
+	--ats-color-primary-text-light: rgb(234, 234, 234);
+	--ats-color-primary-text-gray: rgb(208, 208, 208);
+	--ats-color-primary-bg-deep: rgb(105, 105, 105);
+	--ats-color-primary-bg-light: rgb(239, 239, 239);
+	--ats-color-minor-blue: rgb(23, 58, 255);
+	--ats-color-white: rgb(255, 255, 255);
+}
+body {
+	background-color: var(--ats-color-primary-bg-light);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.ats-nav {
+	width: 100%;
+	background-color: var(--ats-color-white);
+	position: fixed;
+	z-index: 20;
+}
+
+.ats-nav-item-line {
+	width: 76vw;
+	display: flex;
+	align-items: center;
+}
+
+.ats-logo {
+	border-radius: 50%;
+	background-image: url("/imgs/logo.jpg");
+	background-size: 100% 100%;
+	text-align: left;
+	display: inline-block;
+	width: 78px;
+	height: 60px;
+
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+[class^="ats-nav"] .ats-right-items {
+	width: 100%;
+	margin-left: auto;
+}
+[class^="ats-nav"] .ats-right-items ul {
+	list-style-type: none;
+	text-align: right;
+}
+[class^="ats-nav"] .ats-right-items ul li {
+	color: var(--ats-color-primary-text-deep);
+	margin: 1%;
+	display: inline-block;
+}
+
+[class^="ats-nav"] .ats-right-items ul .item {
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+[class^="ats-nav"] .ats-right-items ul .item:hover {
+	transform: scale(1.2);
+	color: var(--ats-color-minor-blue);
+}
+
+.ats-banner {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 30px;
+	color: var(--ats-color-white);
+	height: 400px;
+	width: 100%;
+	background-image: url("/imgs/background.png");
+	background-size: cover;
+	top: 60px;
+	position: relative;
+}
+.ats-banner h1 {
+	font-family: none;
+}
+.ats-blogArea {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+
+	position: relative;
+	top: 60px;
+	width: 76vw;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.ats-foot {
+	top: 60px;
+	bottom: 0px;
+	position: relative;
+	background-color: var(--ats-color-white);
+	border-top: 1px solid var(--ats-color-primary-text-gray);
+	box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.05);
+	height: 100px;
+	width: 100%;
+}
+
+/* TEST */
+.con {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.line {
+	border-right: 2px solid #000;
+	font-size: 200%; /* 字体大小 */
+	font-family: monospace;
+	text-align: center; /* 文字横向居中 */
+	white-space: nowrap; /* 文字不换行 */
+	overflow: hidden; /* 多余的文字内容隐藏 */
+	animation: borders 0.7s infinite normal, widths 2s steps(7); /* 重点 steps() */
+	/* 边框闪烁动画 模拟指针闪烁 */
+}
+@keyframes borders {
+	from {
+		border-right-color: #00000000;
+	}
+	to {
+		border-right-color: #fff;
+	}
+}
+
+/* 容器宽的改变动画 */
+@keyframes widths {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	} /* 也可以是固定宽 */
+}
