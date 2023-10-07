@@ -11,9 +11,9 @@ $(document).ready(()=>{
       });
       
       $(document).ready(function() {
-        const repoOwner = "github_username"; // GitHub用户名
-        const repoName = "repository_name"; // 仓库名
-        const folderPath = "path/to/folder"; // 文件夹路径
+        const repoOwner = "ChengguanYu"; // GitHub用户名
+        const repoName = "ats-blog"; // 仓库名
+        const folderPath = "post"; // 文件夹路径
 
         const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
 
@@ -23,6 +23,7 @@ $(document).ready(()=>{
 
             data.forEach(function(item) {
                 if (item.type === "file") {
+                    console.log(item.name);
                     const fileName = item.name;
                     const listItem = $("<li></li>").text(fileName);
                     fileList.append(listItem);
